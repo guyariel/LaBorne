@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if (transform.position.y > 14f)
+        if (transform.position.y > 5.5f)
         { 
-            transform.position = new Vector3(transform.position.x, 14f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 5.5f, transform.position.z);
             playerRb.velocity = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z); // Annule la vitesse verticale
         }
     }
