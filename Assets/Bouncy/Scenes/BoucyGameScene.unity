@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8692074631793046002, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
+      propertyPath: moneyParticle
+      value: 
+      objectReference: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

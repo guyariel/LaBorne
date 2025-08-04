@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     private int currentObjectIndex;
     private float spawnInterval = 2f;
     private Vector3 spawnPos;
+    PlayerController playerController;
 
 
     void Start()
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (playerController.isGameOver == true)
+        {
+            GameOver();
+        }
     }
 
     void SpawnObject()
@@ -22,5 +27,10 @@ public class GameManager : MonoBehaviour
         currentObjectIndex = Random.Range(0, objectsToSpawn.Length);
         spawnPos = new Vector3(-20, Random.Range(-7f, 5.5f), -4.5f);
         Instantiate(objectsToSpawn[currentObjectIndex], spawnPos, objectsToSpawn[currentObjectIndex].transform.rotation);
+    }
+
+    void GameOver()
+    {
+        CancelInvoke("SpawnObject");
     }
 }
