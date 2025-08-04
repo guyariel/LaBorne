@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -39,13 +40,15 @@ public class PlayerController : MonoBehaviour
         {
             isGameOver = true;
             Destroy(other.gameObject);
-            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            ParticleSystem explosionInstance = Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            Destroy(explosionInstance.gameObject, 2f);
         }
 
         else if (other.gameObject.CompareTag("Money"))
         {
             Destroy(other.gameObject);
-            Instantiate(moneyParticle, transform.position, moneyParticle.transform.rotation);
+            ParticleSystem moneyInstance = Instantiate(moneyParticle, transform.position, moneyParticle.transform.rotation);
+            Destroy(moneyInstance.gameObject, 2f);
         }
     }
 }

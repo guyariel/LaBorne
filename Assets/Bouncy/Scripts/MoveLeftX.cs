@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class MoveLeftX : MonoBehaviour
 {
-    public float speed = 5f;
     PlayerController playerController;
+    GameManager gameManager;
     void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();   
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>(); 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();  
     }
 
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.left * gameManager.moveSpeed * Time.deltaTime, Space.World);
 
         if (gameObject.CompareTag("Money") && transform.position.x < -55f)
         {
@@ -24,7 +25,7 @@ public class MoveLeftX : MonoBehaviour
 
         if (playerController.isGameOver == true)
         {
-            speed = 0f;
+            gameManager.moveSpeed = 0f;
         }
     }
 }

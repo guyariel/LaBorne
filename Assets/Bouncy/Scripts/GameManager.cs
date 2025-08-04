@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private float spawnInterval = 2f;
     private Vector3 spawnPos;
     PlayerController playerController;
+    public float moveSpeed = 5f;
+    public float speedIncreaseRate = 0.2f;
 
 
     void Start()
@@ -20,6 +22,11 @@ public class GameManager : MonoBehaviour
         if (playerController.isGameOver == true)
         {
             GameOver();
+        }
+        else
+        {
+            // Increase speed over time
+            moveSpeed += speedIncreaseRate * Time.deltaTime;
         }
     }
 
