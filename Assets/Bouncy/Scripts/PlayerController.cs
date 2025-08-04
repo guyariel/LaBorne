@@ -8,10 +8,15 @@ public class PlayerController : MonoBehaviour
     public bool isGameOver = false;
     public ParticleSystem explosionParticle;
     public ParticleSystem moneyParticle;
+    public AudioClip boucesound;
+    public AudioClip moneySound;
+    public AudioClip bombSound;
+    private AudioSource playerAudio;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     [System.Obsolete]
@@ -41,6 +46,7 @@ public class PlayerController : MonoBehaviour
             isGameOver = true;
             Destroy(other.gameObject);
             ParticleSystem explosionInstance = Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            playerAudio.PlayOneShot(bombSound, 1.0f);
             Destroy(explosionInstance.gameObject, 2f);
         }
 
@@ -48,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             ParticleSystem moneyInstance = Instantiate(moneyParticle, transform.position, moneyParticle.transform.rotation);
+            playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(moneyInstance.gameObject, 2f);
         }
     }
