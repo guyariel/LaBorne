@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnObject", 0f, spawnInterval);
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     void Update()

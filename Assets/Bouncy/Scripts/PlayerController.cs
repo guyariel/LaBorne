@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isGameOver)
         {
             Jump();
         }
