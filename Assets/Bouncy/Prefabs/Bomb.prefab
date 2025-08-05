@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 34967986875843705}
   - component: {fileID: 6813272084001677359}
   - component: {fileID: 5515308689249843958}
+  - component: {fileID: 6104122368008478877}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Bomb
@@ -121,4 +122,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f20d1111a568463bab6199a82251107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+--- !u!114 &6104122368008478877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11368019182273911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b997d87200bd94b768b9fbb286f703bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 30
